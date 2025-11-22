@@ -1,0 +1,26 @@
+body {
+	background-color: rgb(252, 241, 235);
+}
+
+.btn-custom-primary {
+	--bs-btn-bg: rgba(238, 76, 12, 0.9);
+	--bs-btn-hover-bg: rgb(194, 60, 7);
+	--bs-btn-active-bg: rgb(238, 76, 12);
+	--bs-btn-border-color: none;
+	--bs-btn-color: white;
+	--bs-btn-hover-color: white;
+	--bs-btn-active-color: white;
+}
+
+.btn-custom-outline-primary {
+	--bs-btn-hover-bg: rgba(238, 76, 12, 0.9);
+	--bs-btn-active-bg: rgb(238, 76, 12);
+	--bs-btn-border-color: rgba(238, 76, 12, 0.9);
+	--bs-btn-color: rgba(238, 76, 12, 0.9);
+	--bs-btn-hover-color: white;
+	--bs-btn-active-color: white;
+}
+
+.below-navbar {
+	margin-top: 5rem;
+}
