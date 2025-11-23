@@ -2,9 +2,10 @@ import authService from '../services/auth.service.js'
 import userService from '../services/user.service.js'
 
 export const auth = async (req, res, next) => {
-	// const token = req.headers.authorization?.split(' ')[1];
 	const token = req.cookies.token;
-	console.log(token)
+
+	console.log(token);
+
 	if (!token) {
 		return res.status(401).json({
 			success: false,
@@ -24,6 +25,7 @@ export const auth = async (req, res, next) => {
 
 		throw Error(`User with username ${payload.username} does not exist.`);
 	} catch (err) {
+		console.log(err);
 		res.status(401).json({
 			success: false,
 			message: err.message,

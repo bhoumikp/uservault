@@ -8,9 +8,18 @@ const createUser = async (payload) => {
 };
 
 const getUser = async (username) => {
-	const sql_query = `SELECT * FROM users WHERE username=?`;
-	const [row] = await pool.query(sql_query, [username]);
-	return row[0];
+	try {
+		const sql_query = `SELECT * FROM users WHERE username=?`;
+		const [row] = await pool.query(sql_query, [username]);
+		return row[0];
+	} catch (err) {
+		console.log(err);
+		return res.status(500).json({
+			success: false,
+			message: `Database Error`,
+			error: err
+		});
+	}
 };
 
 const updateUser = async (username, payload) => {

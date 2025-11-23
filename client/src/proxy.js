@@ -3,13 +3,12 @@ import { NextResponse } from "next/server"
 
 const API_ENDPOINT = process.env.NEXT_PUBLIC_API_ENDPOINT;
 
-export const middleware = async (req) => {
+export const proxy = async (req) => {
 	const pathname = req.nextUrl.pathname;
 	const token = req.cookies.get("token")?.value;
 	const loginUrl = new URL('/login', req.url);
 	const vaultUrl = new URL('/vault', req.url);
 
-	// console.log(token);
 	if (!token && pathname === '/vault') return NextResponse.redirect(loginUrl);
 
 	try {
@@ -23,18 +22,18 @@ export const middleware = async (req) => {
 
 		if (pathname === '/vault') {
 			console.log(isLoggedIn);
-			if (!isLoggedIn)
+			if (!token)
 				return NextResponse.redirect(loginUrl);
 			return NextResponse.next();
 		}
 
 		if (pathname === '/login' || pathname === '/signup') {
-			if (isLoggedIn)
+			if (token)
 				return NextResponse.redirect(vaultUrl);
 			return NextResponse.next();
 		}
 	} catch (err) {
-		console.log(err);
+		console.log(err.response?.data.message);
 	}
 
 	return NextResponse.next();

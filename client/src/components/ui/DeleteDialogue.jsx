@@ -26,22 +26,45 @@ export default function DeleteDialogue() {
 
 	return (
 		<div>
-			<button type="button" id="profile-delete-btn" className='btn btn-danger btn-custom-delete my-3 mx-3' data-bs-toggle="modal" data-bs-target="#delete-modal" >Delete Vault</button>
+			<button 
+				type="button" 
+				id="profile-delete-btn" 
+				className='btn btn-danger btn-update btn-delete my-3 mx-3 px-0' 
+				data-bs-toggle="modal" 
+				data-bs-target="#delete-modal"
+			>
+				Delete Vault
+			</button>
 
-			<div className="modal fade" id="delete-modal" data-bs-backdrop='static' data-bs-keyboard="false" tabIndex="-1">
+			<div className="modal fade" id="delete-modal" tabIndex="-1">
 				<div className="modal-dialog modal-dialog-centered">
 					<div className="modal-content">
 						<div className="modal-header px-4">
 							<h1 className="modal-title fs-4">Confirm Delete</h1>
-							<button type="button" className="btn-close" data-bs-dismiss="modal"></button>
+							<button 
+							type="button" 
+							className="btn-close" 
+							data-bs-dismiss="modal"
+							>
+							</button>
 						</div>
 
 						<div className="modal-body py-4">
-							Are you sure you want to <b>delete your vault</b>? <span className="text-danger fw-semibold">This will earse your data permanently and cannot be undone.</span>
+							Are you sure you want to <b>delete your vault</b>?
+							<span className="text-danger fw-semibold">
+								{" "}This will earse your data permanently and cannot be undone.
+							</span>
 						</div>
 
 						<div className="modal-footer">
-							<button onClick={handleDeleteUser} type="button" className="btn btn-danger w-100" data-bs-dismiss="modal">Delete</button>
+							<button 
+								onClick={handleDeleteUser} 
+								type="button" 
+								className="btn btn-danger w-100" 
+								data-bs-dismiss="modal"
+							>
+								Delete
+							</button>
 						</div>
 					</div>
 				</div>

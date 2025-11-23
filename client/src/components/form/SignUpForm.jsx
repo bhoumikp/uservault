@@ -3,6 +3,8 @@
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { Input } from "../ui/Input";
+import { Select } from "../ui/Select";
 
 const API_ENDPOINT = process.env.NEXT_PUBLIC_API_ENDPOINT;
 
@@ -41,9 +43,10 @@ export default function SignUpForm() {
 	}
 
 	return (
-		<div className="container-fluid d-flex flex-column align-items-center w-50">
-			<div className="mt-5 text-center">
+		<div className="container-fluid d-flex flex-column align-items-center p-4 col-lg-8 mb-5">
+			<div className="my-3 text-center">
 				<h1 className="fw-bold display-5">
+					
 					Create Your <span style={{color: 'rgb(238, 76, 12)'}}>Vault.</span> 
 				</h1>
 				<p className="text-muted fs-5 mt-3">
@@ -52,62 +55,81 @@ export default function SignUpForm() {
 			</div>
 
 
-			<form className="w-75 mt-4">
-				<div className="row m-4">
-					<div className='col-12'>
-						<label className="form-label fw-semibold my-2">Username</label>
-						<input onChange={(e) => setUsername(e.target.value)} className="form-control" type="text" name="username" placeholder="Enter username" required/>
+			<form className="auth-form p-lg-4 col-md-10 mt-2 mt-lg-4">
+				<div className="row m-4 mx-3">
+					<div className='col-12 col-lg-6'>
+						<Input 
+							label="Username" 
+							type="text" 
+							placeholder="Enter username"
+							listener={setUsername}
+						/>
 					</div>
-				</div>
+				{/* </div> */}
 
-				<div className="row m-4">
-					<div className="col-12">
-						<label className="form-label fw-semibold my-2">Email</label>
-						<input onChange={(e) => setEmail(e.target.value)} className="form-control" type="email" name="email" placeholder="Enter email address" required/>
+				{/* <div className="row m-4"> */}
+					<div className="col-12 col-lg-6 mt-3 mt-lg-0">
+						<Input 
+							label="Email" 
+							type="email" 
+							placeholder="Enter email"
+							listener={setEmail}
+						/>
 					</div>
-				</div>
+				{/* </div> */}
 
-				<div className='row m-4'>
-					<div className="col-6 ">
-						<label className="form-label fw-semibold my-2">Password</label>
-						<input onChange={(e) => setPassword(e.target.value)} className="form-control" type="password" name="password" placeholder="Enter password" required />
+				{/* <div className='row m-4'> */}
+					<div className="col-12 col-lg-6 mt-3 mt-lg-4">
+						<Input 
+							label="Password" 
+							type="password" 
+							placeholder="Enter password"
+							listener={setPassword}
+						/>
 					</div>
 
-					<div className="col-6">
-						<label className="form-label fw-semibold my-2">Confirm Password</label>
-						<input onChange={(e) => setConfirmPassword(e.target.value)} className="form-control" type="password" name="confirmPassword" placeholder="Re-Enter password" required/>
+					<div className="col-12 col-lg-6 mt-3 mt-lg-4">
+						<Input 
+							label="Confirm Password" 
+							type="password" 
+							placeholder="Re-Enter password"
+							listener={setConfirmPassword}
+						/>
 					</div>
-				</div>
+				{/* </div> */}
 
-				<div className='row m-4'>
-					<div className="col-4">
-						<label className="form-label fw-semibold my-2">Date of Birth</label>
-						<input onChange={(e) => setDob(e.target.value)} className="form-control" type="date" name="dob" />
+				{/* <div className='row m-4'> */}
+					<div className="col-12 col-lg-4 mt-3 mt-lg-4">
+						<Input 
+							label={"Date of Birth"}
+							type={"date"}
+							listener={setDob}
+						/>
 					</div>
-					<div className="col-4">
-						<label className="form-label fw-semibold my-2">Gender</label>
-						<select onChange={(e) => setGender(e.target.value)} className='form-select' name="gender">
-							<option value="">Select Gender</option>
-							<option value="Male">Male</option>
-							<option value="Female">Female</option>
-						</select>
+					<div className="col-12 col-lg-4 mt-2 mt-lg-4">
+						<Select 
+							label={"Gender"}
+							listener={setGender}
+							options={["Male", "Female"]}
+						/>
 					</div>
-					<div className="col-4">
-						<label className="form-label fw-semibold my-2">Marital Status</label>
-						<select onChange={(e) => setMaritalStatus(e.target.value)} className='form-select' name="gender">
-							<option value="">Select Marital Status</option>
-							<option value="Single">Single</option>
-							<option value="Married">Married</option>
-							<option value="Divorced">Divorced</option>
-							<option value="Widowed">Widowed</option>
-							<option value="Seperated">Separated</option>
-						</select>
+					<div className="col-12 col-lg-4 mt-2 mt-lg-4">
+						<Select 
+							label={"Marital Status"}
+							listener={setMaritalStatus}
+							options={["Single", "Married", "Divorced", "Widowed", "Seperated"]}
+						/>
 					</div>
 				</div>
 
 				<div className='row m-4 px-2'>
-					<button type="submit" onClick={handleSignUp} className="btn btn-custom-primary fw-semibold fs-5 my-2 py-3">Sign Up</button>
-					{/* <input type="submit" className='col-12 btn btn-primary' value="Sign Up"/> */}
+					<button 
+						type="submit" 
+						onClick={handleSignUp} 
+						className="btn btn-custom-primary btn-auth-submit fw-semibold fs-5 my-3"
+						>
+							Sign Up
+					</button>
 				</div>
 			</form>
 		</div>

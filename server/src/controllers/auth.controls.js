@@ -18,7 +18,7 @@ const handleGenerateToken = async (req, res) => {
 	if (validation === 'USER_NOT_FOUND') {
 		return res.status(404).json({
 			success: false,
-			message: `User with username ${payload.username} does not exist.`
+			message: `User with username "${payload.username}" does not exist.`
 		})
 	}
 
@@ -37,7 +37,8 @@ const handleGenerateToken = async (req, res) => {
 			message: "User Logged In successfully.",
 		});
 	} catch (err) {
-		return res.json({
+		console.log(err);
+		return res.status(400).json({
 			success: false,
 			message: err.message,
 			error: err.name

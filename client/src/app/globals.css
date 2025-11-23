@@ -21,6 +21,61 @@ body {
 	--bs-btn-active-color: white;
 }
 
+/* Navbar Styles */
+
+.navbar {
+	padding: 1vw 6vw;
+	background-color: rgb(255, 248, 245);
+	box-shadow: 0 1px 10px 0px rgba(182, 182, 182, 0.568);
+}
+
+.navbar-brand,
+.navbar-brand:hover,
+.navbar-brand:focus {
+	color: rgba(238, 76, 12);
+}
+
 .below-navbar {
-	margin-top: 5rem;
+	/* padding-top: 6vw; */
+}
+
+
+/* Profile Styles */
+.profile-input,
+.profile-select {
+	height: 3.3rem;
+}
+
+.card-container {
+	background-color: rgb(255, 250, 250);
+	border-radius: 10px;
+	box-shadow: 0 0 6px 1px rgba(182, 182, 182, 0.568);
+}
+
+.btn-update {
+	width: 5rem;
+	height: 2.7rem;
+	font-size: 1.1rem;
+}
+
+.btn-delete {
+	width: 8rem;
+}
+
+.password-container {
+	width: 20rem;
+}
+
+/* Auth Styles */
+
+.auth-input,
+.auth-select,
+.btn-auth-submit {
+	height: 3.5rem;
+}
+
+.auth-form {
+	background-color: rgb(255, 250, 250);
+	border-radius: 10px;
+	box-shadow: 0 0 6px 1px rgba(182, 182, 182, 0.568);
 }

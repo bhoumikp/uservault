@@ -19,7 +19,7 @@ export const AuthProvider = ({ children }) => {
 			console.log(isLoggedIn);
 		} catch (err) {
 			setIsLoggedIn(false);
-			console.log(err.response.data);
+			console.log(err.response?.data);
 		}
 	}
 

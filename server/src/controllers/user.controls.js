@@ -21,7 +21,7 @@ const handleCreateUser = async (req, res) => {
 		console.log(`Row inserted at Id ${result.insertId}`);
 		return res.json({
 			success: true,
-			message: `User created with username ${payload.username}.`,
+			message: `User created with username "${payload.username}".`,
 		});
 	} catch (err) {
 		console.log(`Inserting row failed`);
