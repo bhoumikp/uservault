@@ -1,4 +1,4 @@
-export const Input = ({ label, type, placeholder=null, listener }) => {
+export const FormInput = ({ label, type, placeholder=null, listener }) => {
 	return (
 		<div>
 			<label className="form-label fw-semibold my-md-2">{label}</label>

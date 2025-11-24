@@ -13,7 +13,7 @@ export default function Home() {
         <Navbar />
 
         <div className="container">
-          <img src="/vault-img.png" className="img-fluid col-8 col-lg-4"></img>
+          <img src="/vault.png" className="img-fluid col-8 col-lg-4"></img>
           <h1 className="fw-bold display-5">Your Identity, Secured.</h1>
           <p className="text-muted fs-5 mt-3">
             Store your essential profile details safely in one vault — always in your control.

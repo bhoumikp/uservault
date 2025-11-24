@@ -3,7 +3,7 @@
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { Input } from "../ui/Input";
+import { FormInput } from "../ui/FormInput";
 import { Select } from "../ui/Select";
 
 const API_ENDPOINT = process.env.NEXT_PUBLIC_API_ENDPOINT;
@@ -44,7 +44,7 @@ export default function SignUpForm() {
 
 	return (
 		<div className="container-fluid d-flex flex-column align-items-center p-4 col-lg-8 mb-5">
-			<div className="my-3 text-center">
+			<div className="mt-3 mt-md-5 text-center">
 				<h1 className="fw-bold display-5">
 					
 					Create Your <span style={{color: 'rgb(238, 76, 12)'}}>Vault.</span> 
@@ -58,29 +58,25 @@ export default function SignUpForm() {
 			<form className="auth-form p-lg-4 col-md-10 mt-2 mt-lg-4">
 				<div className="row m-4 mx-3">
 					<div className='col-12 col-lg-6'>
-						<Input 
+						<FormInput 
 							label="Username" 
 							type="text" 
 							placeholder="Enter username"
 							listener={setUsername}
 						/>
 					</div>
-				{/* </div> */}
 
-				{/* <div className="row m-4"> */}
 					<div className="col-12 col-lg-6 mt-3 mt-lg-0">
-						<Input 
+						<FormInput 
 							label="Email" 
 							type="email" 
 							placeholder="Enter email"
 							listener={setEmail}
 						/>
 					</div>
-				{/* </div> */}
 
-				{/* <div className='row m-4'> */}
 					<div className="col-12 col-lg-6 mt-3 mt-lg-4">
-						<Input 
+						<FormInput 
 							label="Password" 
 							type="password" 
 							placeholder="Enter password"
@@ -89,23 +85,22 @@ export default function SignUpForm() {
 					</div>
 
 					<div className="col-12 col-lg-6 mt-3 mt-lg-4">
-						<Input 
+						<FormInput 
 							label="Confirm Password" 
 							type="password" 
 							placeholder="Re-Enter password"
 							listener={setConfirmPassword}
 						/>
 					</div>
-				{/* </div> */}
 
-				{/* <div className='row m-4'> */}
 					<div className="col-12 col-lg-4 mt-3 mt-lg-4">
-						<Input 
+						<FormInput 
 							label={"Date of Birth"}
 							type={"date"}
 							listener={setDob}
 						/>
 					</div>
+
 					<div className="col-12 col-lg-4 mt-2 mt-lg-4">
 						<Select 
 							label={"Gender"}
@@ -113,6 +108,7 @@ export default function SignUpForm() {
 							options={["Male", "Female"]}
 						/>
 					</div>
+
 					<div className="col-12 col-lg-4 mt-2 mt-lg-4">
 						<Select 
 							label={"Marital Status"}

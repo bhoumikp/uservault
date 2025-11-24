@@ -5,7 +5,7 @@ import axios from 'axios';
 import { Router } from "next/router";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/context/authContext";
-import { Input } from "../ui/Input";
+import { FormInput } from "../ui/FormInput";
 
 const API_ENDPOINT = process.env.NEXT_PUBLIC_API_ENDPOINT;
 
@@ -48,7 +48,7 @@ export default function LoginForm() {
 
 			<form className="auth-form p-lg-4 col-12 col-lg-8 mt-4">
 				<div className='m-4'>
-					<Input 
+					<FormInput 
 						label="Username" 
 						type="text" 
 						placeholder="Enter username"
@@ -57,7 +57,7 @@ export default function LoginForm() {
 				</div>
 
 				<div className="m-4 ">
-					<Input 
+					<FormInput 
 						label="Password" 
 						type="password" 
 						placeholder="Enter password"

@@ -1,5 +1,5 @@
 import userService from "../services/user.service.js";
-import { getHashPassword } from "../utility/passwords.js";
+import { getHashedPassword } from "../utility/userValidation.js";
 import authControls from '../controllers/auth.controls.js';
 
 
@@ -13,7 +13,7 @@ const handleCreateUser = async (req, res) => {
 		});
 	}
 
-	payload.password = await getHashPassword(payload.password);
+	payload.password = await getHashedPassword(payload.password);
 
 	try {
 		const result = await userService.createUser(Object.values(payload));

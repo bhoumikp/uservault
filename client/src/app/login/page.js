@@ -1,12 +1,11 @@
 import Navbar from "@/components/navbar/Navbar";
-import AuthForm from "@/components/form/AuthForm";
+import LoginForm from "@/components/form/LoginForm";
 
-export default async function Login() {
-
+export default function Login() {
 	return (
 		<div>
 			<Navbar />
-			<AuthForm isLogin={true} />
+			<LoginForm />
 		</div>
 	)
 }

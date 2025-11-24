@@ -1,6 +1,5 @@
 import authService from '../services/auth.service.js';
-import { comparePasswords } from "../utility/passwords.js";
-import { validateUser } from '../utility/validateUser.js';
+import { validateUser } from '../utility/userValidation.js';
 
 
 const handleGenerateToken = async (req, res) => {

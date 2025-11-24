@@ -35,10 +35,6 @@ body {
 	color: rgba(238, 76, 12);
 }
 
-.below-navbar {
-	/* padding-top: 6vw; */
-}
-
 
 /* Profile Styles */
 .profile-input,
@@ -67,7 +63,6 @@ body {
 }
 
 /* Auth Styles */
-
 .auth-input,
 .auth-select,
 .btn-auth-submit {
